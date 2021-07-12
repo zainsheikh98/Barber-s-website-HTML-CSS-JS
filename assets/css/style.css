@@ -4,9 +4,21 @@
   scroll-behavior: smooth;
 }
 
+/* HIDING SCROLL BARS BUT KEEP THE FUNCTIONALITY */
+
+::-webkit-scrollbar {
+  display: none;
+}
+
+html {
+  scrollbar-width: none;
+}
+/* HIDING SCROLL BARS BUT KEEP THE FUNCTIONALITY */
+
 section {
   min-height: 100vh;
-  width: 100vw;
+  width: 100%;
+  overflow-x: hidden;
 }
 
 button {
@@ -20,12 +32,12 @@ button:focus {
 /* NAVBAR STYLES */
 
 #navbar {
+  overflow-x: hidden;
   position: fixed;
   background-color: white;
   top: 0;
+  left: 0;
   width: 100vw;
-  margin-left: auto;
-  margin-right: auto;
   z-index: 1000;
 }
 
@@ -70,8 +82,7 @@ section#home {
   overflow: hidden;
   min-height: 100vh;
   height: auto;
-  margin-top: 20vh;
-  width: 100vw;
+  width: 100%;
   display: flex;
   justify-content: center;
   flex-direction: column;
@@ -81,24 +92,20 @@ section#home {
 
 section#home .wrapper {
   display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
   width: 100%;
-  align-items: center;
-  align-content: center;
+  align-items: flex-end;
+  align-content: flex-end;
   justify-content: space-around;
 }
 
-section#home #carousel {
-  width: 90vw;
-  margin: 10rem;
-}
-
-@media all and (max-width: 950px) {
+@media all and (max-width: 1000px) {
   section#home .wrapper {
-    display: flex;
     flex-direction: column;
     align-content: center;
+    align-items: center;
+    align-content: center;
+    justify-content: flex-end;
+    margin-top: 20vh;
   }
 }
 
@@ -157,7 +164,7 @@ section#services {
   justify-content: center;
   min-height: 100vh;
   height: auto;
-  width: 100vw;
+  width: 100%;
 }
 
 section#services h1 {
@@ -190,7 +197,7 @@ section#about {
   justify-content: center;
   min-height: 100vh;
   height: auto;
-  width: 100vw;
+  width: 100%;
 }
 
 @media all and (max-width: 1024px) {
@@ -270,7 +277,7 @@ section#appointment {
   justify-content: center;
   min-height: 100vh;
   height: auto;
-  width: 100vw;
+  width: 100%;
 }
 
 section#appointment h1 {
@@ -348,7 +355,7 @@ section#footer {
   align-items: center;
   min-height: 100vh;
   height: auto;
-  width: 100vw;
+  width: 100%;
   overflow: hidden;
 }
 
